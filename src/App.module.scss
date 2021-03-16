@@ -1,0 +1,87 @@
+$border-color: #b18597;
+
+.wrapper {
+  text-align: center;
+}
+
+.title {
+  color: white;
+  padding: 1rem 0;
+  font-size: 2rem;
+  background: linear-gradient(
+    90deg,
+    rgba(170, 135, 240, 1) 0%,
+    rgba(238, 142, 232, 1) 35%,
+    rgba(144, 236, 247, 1) 100%
+  );
+}
+
+.card {
+  display: flex;
+  max-width: 40rem;
+  margin: auto;
+  margin-top: 5rem;
+  border: 0.125rem solid $border-color;
+  border-radius: 1rem;
+  padding: 1rem;
+  flex-direction: column;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
+}
+
+.personalInfo {
+  display: flex;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  div {
+    margin-left: 1rem;
+  }
+}
+.photo {
+  width: 10rem;
+  border-radius: 50%;
+  margin: 1rem;
+}
+
+.rowItems {
+  display: flex;
+  align-items: center;
+}
+
+.cake {
+  width: 2rem;
+  margin-right: 0.5rem;
+}
+
+.button {
+  width: 20rem;
+  outline: none;
+  font-family: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 1.25em 2em;
+  border: 0.125rem solid $border-color;
+  border-radius: 0.75em;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1),
+    background 150ms cubic-bezier(0, 0, 0.58, 1);
+
+  &:hover {
+    transform: translate(0, 0.25em);
+  }
+}
