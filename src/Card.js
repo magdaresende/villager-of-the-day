@@ -6,18 +6,16 @@ import {
   faVenus
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './Card.module.scss';
+import Button from './Button';
+import styles from './styles/Card.module.scss';
 
-export default function Card(villager) {
-  villager = villager.villager;
+export default function Card(props) {
+  const villager = props.villager;
   const cardStyle = {
     backgroundColor: villager['bubble-color'],
     color: villager['text-color']
   };
-  const buttonStyle = {
-    color: villager['bubble-color'],
-    backgroundColor: villager['text-color']
-  };
+
   const buttonCopy = 'Can you guess the name?';
   const firstRowElements = [
     {
@@ -70,20 +68,6 @@ export default function Card(villager) {
     );
   };
 
-  const renderButton = () => {
-    return (
-      <div>
-        <button
-          onClick={setButtonName}
-          className={styles.button}
-          style={buttonStyle}
-        >
-          {name}
-        </button>
-      </div>
-    );
-  };
-
   return (
     <div className={styles.card} style={cardStyle}>
       <div className={styles.personalInfo}>
@@ -105,7 +89,13 @@ export default function Card(villager) {
           {renderRowWithItems(['saying'])}
         </div>
       </div>
-      {renderButton()}
+      <Button
+        buttonColor={villager['text-color']}
+        buttonCopy={buttonCopy}
+        buttonName={name}
+        handleButtonClick={setButtonName}
+        textColor={villager['bubble-color']}
+      />
     </div>
   );
 }
