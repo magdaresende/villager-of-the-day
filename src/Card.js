@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import {
   faBirthdayCake,
-  faPaw,
   faMars,
+  faPaw,
+  faRedo,
   faVenus
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -68,8 +69,15 @@ export default function Card(props) {
     );
   };
 
+  function refreshPage() {
+    window.location.reload();
+  }
+
   return (
     <div className={styles.card} style={cardStyle}>
+      <div onClick={refreshPage} className={styles.refreshButton}>
+        <FontAwesomeIcon icon={faRedo} color={villager['text-color']} />
+      </div>
       <div className={styles.personalInfo}>
         <div>
           <img

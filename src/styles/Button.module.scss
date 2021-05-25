@@ -1,4 +1,4 @@
-@import './Colors.scss';
+@import './Variables.scss';
 
 .confetti {
   margin-left: 8rem;
@@ -18,5 +18,9 @@
 
   &:hover {
     transform: translate(0, 0.25em);
+  }
+
+  @media screen and (max-width: $small-screen) {
+    width: 100%;
   }
 }

@@ -1,4 +1,4 @@
-@import './Colors.scss';
+@import './Variables.scss';
 
 .card {
   display: flex;
@@ -15,8 +15,16 @@
     0 100px 80px rgba(0, 0, 0, 0.07);
 }
 
+.refreshButton {
+  position: absolute;
+}
+
 .personalInfo {
   display: flex;
+
+  @media screen and (max-width: $small-screen) {
+    flex-direction: column;
+  }
 }
 
 .column {
@@ -24,6 +32,11 @@
   flex-direction: column;
   margin-left: 2rem;
   justify-content: center;
+
+  @media screen and (max-width: $small-screen) {
+    margin-left: 0;
+    align-items: center;
+  }
 }
 
 .row {
@@ -36,6 +49,7 @@
     margin-left: 1rem;
   }
 }
+
 .photo {
   width: 10rem;
   border-radius: 50%;
